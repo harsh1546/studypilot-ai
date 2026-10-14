@@ -1,0 +1,17 @@
+/* Course map */
+.map-wrap { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; overflow-x: auto; }
+#map { width: 100%; min-width: 640px; height: auto; }
+.edge { stroke: #b6c3cc; stroke-width: 2; }
+.edge.hot { stroke: var(--danger); stroke-width: 3.5; stroke-dasharray: 7 5; }
+.node rect { stroke-width: 2; transition: fill .3s; }
+.node text { font: 600 13px var(--font-body); fill: var(--ink); }
+.node .pct { font-weight: 400; font-size: 11px; fill: var(--ink-soft); }
+.node.low rect { fill: #fbebcf; stroke: var(--amber); }
+.node.mid rect { fill: #dff0ef; stroke: #6bb5b3; }
+.node.high rect { fill: #cdeadf; stroke: #2f9e6b; }
+.node.hot rect { stroke: var(--danger); stroke-width: 3.5; }
+
+.map-legend { display: flex; gap: 1.1rem; align-items: center; margin-top: .9rem; font-size: .85rem; color: var(--ink-soft); }
+.dot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: .3rem; }
+.dot.low { background: var(--amber); } .dot.mid { background: #6bb5b3; } .dot.high { background: #2f9e6b; }
+.remedial { border-left: 4px solid var(--danger); padding-left: .9rem; }

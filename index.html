@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StudyPilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/map.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1 class="brand">StudyPilot</h1>
+    <nav class="nav" aria-label="Sections">
+      <button class="nav-item is-active" data-view="library">Library</button>
+      <button class="nav-item" data-view="tutor">Tutor</button>
+      <button class="nav-item" data-view="quiz">Quiz</button>
+      <button class="nav-item" data-view="map">Course map</button>
+      <button class="nav-item" data-view="progress">Progress</button>
+    </nav>
+    <p class="sidebar-note">Answers come from your own slides, textbooks and lecture transcripts.</p>
+  </aside>
+
+  <main class="content">
+    <!-- Library -->
+    <section id="view-library" class="view is-active">
+      <header class="view-head"><h2>Your course material</h2><p>Add PDFs, slide decks (.pptx) and lecture transcripts (.vtt, .srt).</p></header>
+      <label class="dropzone" id="dropzone">
+        <input type="file" id="file-input" multiple accept=".pdf,.pptx,.vtt,.srt" hidden>
+        <strong>Drop files here or choose files</strong>
+        <span id="upload-status">Topics are found automatically after upload.</span>
+      </label>
+      <div class="feature-strip library-features"><span>✦ Slide + speaker-note extraction</span><span>◎ Page/slide citations</span><span>⌁ Scanned-PDF OCR support (optional)</span></div><div class="topic-grid" id="topic-grid"></div>
+    </section>
+
+    <!-- Tutor -->
+    <section id="view-tutor" class="view">
+      <header class="view-head"><h2>Ask your tutor</h2><p>Every answer cites the exact page, slide or timestamp.</p></header>
+      <div class="chat" id="chat"></div>
+      <form class="composer" id="ask-form">
+        <select id="ask-lang" aria-label="Explanation language"><option value="en">English</option><option value="hi">हिन्दी</option></select>
+        <input id="ask-input" type="text" placeholder="Ask about a concept from your material" autocomplete="off" required>
+        <button class="btn" type="submit">Ask</button>
+      </form>
+    </section>
+
+    <!-- Quiz -->
+    <section id="view-quiz" class="view">
+      <header class="view-head"><h2>Practice quiz</h2><p>Questions adapt to the topics you know least.</p></header>
+      <div class="toolbar">
+        <select id="quiz-topic" aria-label="Quiz scope"><option value="">All topics</option></select>
+        <select id="quiz-kind" aria-label="Question type">
+          <option value="mcq">Multiple choice</option><option value="short">Short answer</option>
+        </select>
+        <select id="quiz-count" aria-label="Quiz length"><option value="5">5-question sprint</option><option value="10" selected>10-question session</option><option value="20">20-question deep practice</option></select><button class="btn" id="quiz-start">Next question</button>
+      </div>
+      <article class="card" id="quiz-card"><p class="empty">Choose a scope and select Next question.</p></article>
+    </section>
+
+    <!-- Course map -->
+    <section id="view-map" class="view">
+      <header class="view-head"><h2>Course map</h2><p>Topics and what they build on. Colour shows your mastery; a miss highlights the gap to fix first.</p></header>
+      <div class="map-wrap"><svg id="map" role="img" aria-label="Topic prerequisite map"></svg></div>
+      <p class="map-legend"><span class="dot low"></span> Needs work <span class="dot mid"></span> Getting there <span class="dot high"></span> Strong</p>
+    </section>
+
+    <!-- Progress -->
+    <section id="view-progress" class="view">
+      <header class="view-head"><h2>Your progress</h2><p>Mastery updates after every answer.</p></header>
+      <div id="mastery-bars"></div>
+      <h3 class="subhead">Weak topics</h3><ul class="list" id="weak-list"></ul>
+      <h3 class="subhead">Recent mistakes</h3><ul class="list" id="mistake-list"></ul>
+    </section>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

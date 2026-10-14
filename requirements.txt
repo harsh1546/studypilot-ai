@@ -1,0 +1,8 @@
+fastapi==0.115.0
+uvicorn==0.30.6
+python-multipart==0.0.9
+pypdf==4.3.1
+python-pptx==1.0.2
+scikit-learn==1.5.2
+numpy==2.1.1
+anthropic==0.34.2   # optional: enables LLM-written questions and answers

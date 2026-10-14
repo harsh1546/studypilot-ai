@@ -1,0 +1,7 @@
+{
+  "note": "Replace with questions from your own course material. expected = source location that answers it.",
+  "in_scope": [
+    {"question": "Replace with a question your material answers", "expected_source": "lecture1.pdf", "expected_loc": "p. 3"}
+  ],
+  "off_material": ["Who won the 2018 football world cup?"]
+}

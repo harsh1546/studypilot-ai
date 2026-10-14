@@ -1,0 +1,23 @@
+/* Design tokens, reset and typography */
+:root {
+  --ink: #12263a;
+  --ink-soft: #4a5d70;
+  --paper: #f4f7f8;
+  --surface: #ffffff;
+  --line: #d9e2e7;
+  --teal: #0e7c7b;
+  --teal-dark: #0a5c5b;
+  --amber: #e8a33d;
+  --danger: #b4443a;
+  --radius: 10px;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Public Sans", system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font: 400 1rem/1.6 var(--font-body); color: var(--ink); background: var(--paper); }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.2; }
+p { margin: 0; }
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--amber); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }

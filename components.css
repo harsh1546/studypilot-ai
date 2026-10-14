@@ -1,0 +1,55 @@
+/* Reusable pieces: buttons, cards, chat, quiz, mastery bars */
+.nav-item { text-align: left; background: none; border: 0; padding: .6rem .85rem; border-radius: 8px; color: #c5d5db; cursor: pointer; transition: background .15s; }
+.nav-item:hover { background: rgba(255,255,255,.08); }
+.nav-item.is-active { background: var(--teal); color: #fff; font-weight: 600; }
+
+.btn { background: var(--teal); color: #fff; border: 0; border-radius: 8px; padding: .65rem 1.2rem; font-weight: 600; cursor: pointer; transition: background .15s; }
+.btn:hover { background: var(--teal-dark); }
+select, input[type="text"] { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: .6rem .8rem; }
+
+.dropzone { display: flex; flex-direction: column; gap: .35rem; align-items: center; text-align: center; padding: 2.25rem 1rem; border: 2px dashed var(--teal); border-radius: var(--radius); background: var(--surface); cursor: pointer; }
+.dropzone.is-over { background: #e3f3f2; }
+.dropzone span { color: var(--ink-soft); font-size: .9rem; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.25rem; }
+.card h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.card .meta { color: var(--ink-soft); font-size: .85rem; }
+.empty { color: var(--ink-soft); }
+
+/* Chat */
+.chat { display: flex; flex-direction: column; gap: .9rem; min-height: 16rem; margin-bottom: 1rem; }
+.msg { max-width: 42rem; padding: .85rem 1.1rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.msg.user { align-self: flex-end; background: var(--ink); color: #fff; border-color: var(--ink); }
+.msg.flag { border-left: 4px solid var(--amber); }
+.cite { display: block; margin-top: .6rem; padding: .5rem .7rem; border-radius: 6px; background: var(--paper); font-size: .85rem; color: var(--ink-soft); }
+.cite a { color: var(--teal-dark); font-weight: 600; }
+.composer { display: flex; gap: .6rem; }
+.composer input { flex: 1; }
+
+/* Quiz */
+.options { display: grid; gap: .5rem; margin-top: 1rem; }
+.option { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: .7rem .9rem; cursor: pointer; }
+.option:hover { border-color: var(--teal); }
+.option.is-right { background: #e1f4ea; border-color: #2f9e6b; }
+.option.is-wrong { background: #f9e5e2; border-color: var(--danger); }
+.tags { display: flex; gap: .5rem; margin-bottom: .75rem; font-size: .8rem; color: var(--ink-soft); }
+.tag { border: 1px solid var(--line); border-radius: 99px; padding: .1rem .6rem; }
+.feedback { margin-top: 1rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+
+/* Mastery */
+.bar-row { display: grid; grid-template-columns: 12rem 1fr 3rem; gap: .75rem; align-items: center; margin-bottom: .7rem; font-size: .9rem; }
+.bar { height: 10px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--teal); transition: width .4s; }
+.bar > span.low { background: var(--amber); }
+.subhead { margin: 1.75rem 0 .6rem; font-size: 1.1rem; }
+.list { padding-left: 1.1rem; color: var(--ink-soft); }
+
+/* StudyPilot refinements: quality cues and compact study features */
+.feature-strip{display:flex;flex-wrap:wrap;gap:.55rem;margin:.85rem 0 1.2rem}
+.feature-strip span{display:inline-flex;align-items:center;gap:.4rem;padding:.48rem .72rem;border:1px solid rgba(131,150,205,.24);border-radius:999px;background:linear-gradient(120deg,rgba(128,83,239,.13),rgba(39,190,216,.08));color:#cdd8f3;font-size:.82rem}
+#quiz-count{min-width:155px}
+#quiz-card>p:not(.empty){font-size:1.16rem;line-height:1.65;font-weight:600;color:#f2f5ff}
+#quiz-card .feedback{border:1px solid rgba(60,211,159,.25);border-radius:12px;background:rgba(25,183,131,.08);padding:1rem;line-height:1.6}
+#quiz-card .tags .tag{background:rgba(118,102,240,.12);border-color:rgba(118,102,240,.3)}
+.option:focus-visible,.btn:focus-visible,.nav-item:focus-visible{outline:2px solid #6ddcf2;outline-offset:3px}
+@media(max-width:760px){.feature-strip span{font-size:.75rem}.toolbar>*{flex:1;min-width:0}}
